@@ -2,17 +2,21 @@ import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSearchParams } from "react-router-dom";
 import { closeMenu } from "../utils/appSlice";
+import CommentsContainer from "./CommentsContainer";
+import LiveChat from "./LiveChat";
 
 const WatchPage = () => {
   const [searchParams] = useSearchParams();
-  console.log(searchParams.get("v"));
+ 
 
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(closeMenu());
   }, []);
   return (
-    <div className="px-5">
+    <div className="flex flex-col w-full">
+    <div className="px-5 flex w-full ">
+    <div className="">
       <iframe
         width="900"
         height="450"
@@ -22,6 +26,13 @@ const WatchPage = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowFullScreen
       ></iframe>
+      </div>
+      <div className="w-[450px] ml-5 ">
+        <LiveChat />
+      </div>
+    </div>
+
+    <CommentsContainer />
     </div>
   );
 };
