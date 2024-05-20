@@ -1,9 +1,10 @@
 
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import VideoCard from './VideoCard';
 import { YOUTUBE_SEARCH_API } from '../utils/constants';
-import SearchVideo from './SearchVideo';
+import SearchVideoCard from './SearchVideoCard';
+import ButtonList from './ButtonList';
+import { Link } from "react-router-dom"
 
 const SearchBarResults = () => {
     const [videos, setVideos] = useState([]);
@@ -25,12 +26,20 @@ const SearchBarResults = () => {
     }, [query]);
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-            {videos.map((video) => (
-                <SearchVideo key={video.id.videoId} info={video} /> 
+        <div className="">
+             <div>
+             <ButtonList />
+             </div>
+              <div>
+              {videos.map((video) => (
+                <Link key={video.id.videoId} to={"/watch?v="+ video.id.videoId}><SearchVideoCard  info={video} /></Link>
             ))}
+              </div>
+           
         </div>
     );
 };
 
 export default SearchBarResults;
+
+

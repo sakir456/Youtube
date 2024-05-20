@@ -8,7 +8,7 @@ const ButtonList = () => {
     const checkClickedButton = (name) => {
         setClickedButton(name)
     } 
-    const buttonNames = ["All", "Gaming", "Songs", "Live", "Soccer", "Cricket", "Cooking", "News", "javascript", "IPL", "Music", "Mixes", "FootBall", "Punjab", "USA", ];
+    const buttonNames = ["All", "Shorts", "Videos", "Live", "Watched", "Unwatched", "Cooking", "News", "javascript", "IPL", "Music", "Mixes", "FootBall", "Punjab", "USA", ];
 
     return(
         <div className="flex"> 

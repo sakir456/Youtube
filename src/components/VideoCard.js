@@ -1,6 +1,6 @@
 const VideoCard = ({info}) => {
   
-      const {snippet, statistics} = info;
+      const {snippet, statistics } = info;
    const {channelTitle, title, thumbnails} = snippet
 
     return (
@@ -9,7 +9,7 @@ const VideoCard = ({info}) => {
        <ul>
           <li className="font-bold py-1 text-sm ">{title}</li> 
          <li className="text-sm text-gray-500">{channelTitle}</li>  
-         {/* <li className="text-sm text-gray-500">{statistics.viewCount} views</li>  */}
+         <li className="text-sm text-gray-500">{statistics.viewCount} views</li> 
       </ul>
         </div>
     )
