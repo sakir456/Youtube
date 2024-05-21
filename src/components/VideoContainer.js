@@ -23,7 +23,8 @@ const VideoContainer = () => {
           { state: {
             videoTitle: video.snippet.title,
             channelTitle: video.snippet.channelTitle,
-           viewCount: video.statistics?.viewCount || "N/A"
+           viewCount: video.statistics?.viewCount,
+           likeCount: video.statistics?.likeCount || "N/A"
          } 
         });
     };
