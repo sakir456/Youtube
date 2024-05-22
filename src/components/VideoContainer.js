@@ -24,7 +24,8 @@ const VideoContainer = () => {
             videoTitle: video.snippet.title,
             channelTitle: video.snippet.channelTitle,
            viewCount: video.statistics?.viewCount,
-           likeCount: video.statistics?.likeCount || "N/A"
+           likeCount: video.statistics?.likeCount,
+           channelId:  video.snippet.channelId || "N/A"
          } 
         });
     };
@@ -32,7 +33,7 @@ const VideoContainer = () => {
     return (
         <div className="flex flex-wrap">
             {videos.map((video) => (
-                <div key={video.id} onClick={() => handleVideoClick(video)}>
+                <div key={video.id} onClick={() => handleVideoClick(video)} >
                     <VideoCard info={video} />
                 </div>
             ))}

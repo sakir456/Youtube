@@ -7,9 +7,10 @@ export const YOUTUBE_VIDEO_API = "https://youtube.googleapis.com/youtube/v3/vide
 
  export const YOUTUBE_SEARCH_API =`https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&key=${GOOGLE_API_KEY}`;
 
+export const CHANNEL_DETAILS_API = 
+`https://youtube.googleapis.com/youtube/v3/channels?part=snippet%2CcontentDetails%2Cstatistics&id=CHANNEL_ID&key=${GOOGLE_API_KEY}`
 
 
-// "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 
 
