@@ -5,11 +5,13 @@ import { YOUTUBE_SEARCH_API } from '../utils/constants';
 import SearchVideoCard from './SearchVideoCard';
 import ButtonList from './ButtonList';
 import { Link } from "react-router-dom"
+import {  useNavigate } from "react-router-dom";
 
 const SearchBarResults = () => {
     const [videos, setVideos] = useState([]);
     const location = useLocation();
     const query = new URLSearchParams(location.search).get('q');
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchVideos = async () => {
@@ -25,6 +27,17 @@ const SearchBarResults = () => {
         }
     }, [query]);
 
+    const handleVideoClick = (video) => {
+        navigate(`/watch?v=${video.id.videoId}`, 
+          { state: {
+            videoTitle: video.snippet.title,
+            channelTitle: video.snippet.channelTitle,
+           channelId:  video.snippet.channelId || "N/A"
+         } 
+        });
+    };
+
+
     return (
         <div className="">
              <div>
@@ -32,7 +45,10 @@ const SearchBarResults = () => {
              </div>
               <div>
               {videos.map((video) => (
-                <Link key={video.id.videoId} to={"/watch?v="+ video.id.videoId}><SearchVideoCard  info={video} /></Link>
+                <div key={video.id.videoId} onClick={() => handleVideoClick(video)} >
+
+                 <SearchVideoCard  info={video} />
+                 </div>
             ))}
               </div>
            

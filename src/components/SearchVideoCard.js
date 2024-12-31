@@ -1,10 +1,10 @@
-const SearchVideoCard = ({info}) => {
+const SearchVideoCard = ({info, onClick}) => {
 
     const {snippet  } = info;
    const {channelTitle, title, thumbnails} = snippet
 
     return (
-        <div className="flex">
+        <div className="flex" onClick={onClick}>
         <div className="w-[303px] m-3 shadow-lg">
          <img className="rounded-lg cursor-pointer  " alt="thumbnail" src={thumbnails.medium.url}  /> 
          </div> 
