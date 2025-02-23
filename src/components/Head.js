@@ -185,9 +185,7 @@ const Head = () => {
                     </div>
                 )}
             </div>
-            <button className="bg-green-300  rounded-2xl" onClick={handleThemeSwitch}>
-             DarkMode
-            </button>
+          
             <div className="col-span-1 flex items-center">
             <img
                     className="h-8"
