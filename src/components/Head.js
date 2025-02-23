@@ -30,9 +30,7 @@ const Head = () => {
      }
     },[theme]);
 
-    const handleThemeSwitch = () => {
-        setTheme(theme=== "dark" ? "light": "dark")
-    }
+    
    
 
     useEffect(() => {
